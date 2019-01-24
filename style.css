@@ -1,0 +1,125 @@
+body {
+	background: url(http://www.glavtop.ru/img/1920x1080/02.jpg) no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Tahoma, sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: .3s;
+}
+.clr {
+	clear: both;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+#wrap {
+	max-width: 1170px;
+	height: auto;
+	margin: 0 auto;
+}
+
+/* header-start */
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 250px;
+}
+.menu {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: auto;
+	background: rgba(255,255,255,.5);
+	padding: 20px;
+}
+.menu .lists-item {
+	text-align:  center;
+}
+.menu .lists-item .list-item {
+	display: inline-block;
+	margin-right: 20px;
+}
+.menu .lists-item .list-item:last-child {
+	margin-right: 0;
+}
+.menu .lists-item .list-item .link-item {
+	color: #474E57;
+	font-weight: 400;
+}
+.menu .lists-item .list-item .link-item:hover {
+	color: #5b697a;
+}
+.bg-header {
+	background: url(https://ak7.picdn.net/shutterstock/videos/10779467/thumb/1.jpg) no-repeat;
+	background-size: cover;
+	height: 100%;
+	opacity: .5;
+}
+
+/* header-end */
+
+.content {
+	width: 100%;
+	height: auto;
+	color: #fff;
+	padding: 20px;
+	background: rgba(0,0,0,.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-direction: row;
+}
+.content .addnews {
+	width: 600px;
+	background: rgba(0,0,0,.3);
+	padding: 10px;
+	text-align: justify;
+	margin-left: 20%;
+	margin-right: 20%;
+
+}
+.content .addnews .news .title {
+	margin-bottom: 10px;
+}
+.content .addnews .news .photo-and-content {
+	width: 100%;
+}
+.content .addnews .news .photo-and-content .photo {
+	max-width: 200px;
+	float: top;
+	margin-right: 10px;
+}
+.content .addnews .news .photo-and-content .photo img {
+	width: 100%;
+}
+
+.sidebar {
+	width: 400px;
+	background: rgba(0,0,0,.3);
+	padding: 10px;
+}
+
+
+@media only screen and (max-width: 1170px) {
+	.content {
+		display: block;
+	}
+	.content .addnews {
+		width: 100%;
+		margin: 0 auto 20px;
+
+	}
+	.sidebar {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
