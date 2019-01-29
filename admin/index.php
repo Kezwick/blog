@@ -17,7 +17,6 @@ require_once('../lib/func.php');?>
 
         <?php
 
-
         $username= checkAuth();
         //print_r($_SESSION);
         //echo 'username---->'.$username;
