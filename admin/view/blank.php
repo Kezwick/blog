@@ -1,9 +1,13 @@
+<?php
+require_once('../../data.php');
+require_once ('../../lib/func.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | 500 Error</title>
+  <title>AdminLTE 2 | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -25,42 +29,26 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
 <div class="">
   <div class="">
-    <section class="content">
-      <div class="error-page">
-        <h2 class="headline text-red">500</h2>
-        <div class="error-content">
-          <h3><i class="fa fa-warning text-red"></i> Oops! Something went wrong.</h3>
-          <p>
-            We will work on fixing that right away.
-            Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search form.
-          </p>
-
-          <form class="search-form">
-            <div class="input-group">
-              <input type="text" name="search" class="form-control" placeholder="Search">
-
-              <div class="input-group-btn">
-                <button type="submit" name="submit" class="btn btn-danger btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+        <?php
+        ShowFishText();
+        ShowBeautifulEditBox();
+        ?>
   </div>
-    </div>
-  </aside>
 </div>
 <script src="./Components/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="./Components/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./Components/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="./Components/bower_components/fastclick/lib/fastclick.js"></script>
 <script src="./Components/dist/js/adminlte.min.js"></script>
 <script src="./Components/dist/js/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
 </body>
 </html>

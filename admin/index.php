@@ -14,7 +14,7 @@ require_once('../lib/func.php');?>
 </div>
 
 <section class="container">
-
+    <div>
         <?php
 
         $username= checkAuth();
@@ -41,7 +41,6 @@ require_once('../lib/func.php');?>
             echo '<a href="/admin/logout.php">Выход</a>';
         }
         ?>
-    </div>
     </div>
 </section>
 </body>

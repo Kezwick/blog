@@ -1,6 +1,11 @@
 <?php
 session_start();
-require_once('../lib/func.php');?>
+require_once('../lib/func.php');
+unset($_SESSION['username']);
+showAlert('Пока!');
+goUri("/admin/blank.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +32,6 @@ require_once('../lib/func.php');?>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
@@ -35,10 +39,8 @@ require_once('../lib/func.php');?>
   <div class="login-logo">
     <a href="../../index2.html"><b>SuperAdmin</b></a>
   </div>
-  <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
     <form action="../../index2.html" method="post">
       <div class="form-group has-feedback">
         <input type="text" name="username" class="form-control" placeholder="User name">
@@ -50,7 +52,6 @@ require_once('../lib/func.php');?>
       </div>
       <div class="row">
         <div class="col-xs-8">
-
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
@@ -59,21 +60,10 @@ require_once('../lib/func.php');?>
         <!-- /.col -->
       </div>
     </form>
-
-
-
-
-
   </div>
-  <!-- /.login-box-body -->
 </div>
-<!-- /.login-box -->
-
-<!-- jQuery 3 -->
 <script src="./Components/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
 <script src="./Components/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
 <script src="./Components/plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
