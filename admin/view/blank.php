@@ -1,7 +1,4 @@
-<?php
-require_once('../../data.php');
-require_once ('../../lib/func.php');
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +30,32 @@ require_once ('../../lib/func.php');
 </head>
 <div class="">
   <div class="">
+      <?php
+      $username= checkAuth();
+      print_r($username);
+      if($username == false){
+          goUri("/admin/view/login.php");
+          /*
+          if(isset($_GET['commit'])){
+              $login=$_GET['login'];
+              $password=$_GET['password'];
+              if($login=='user' && $password == 'user') {
+                  $_SESSION['username']=$login;
+                  showAlert('Привет '.$login);
+                  goUri("/admin/index.php");
+              }else{
+                  showAlert('!!! -=Login or password INCORECT=- !!!!');
+                  goUri("/admin/index.php");
+              }
+
+          }else{
+          }
+          */
+      }else{
+          echo 'hi '.$_SESSION['username'];
+          echo '<a href="/admin/logout.php">Выход</a>';
+      }
+      ?>
         <?php
         ShowFishText();
         ShowBeautifulEditBox();

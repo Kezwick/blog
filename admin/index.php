@@ -1,27 +1,14 @@
 
 <?php
 session_start();
-require_once('../lib/func.php');?>
-<!DOCTYPE html><html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div>
-    <div class="clr"></div>
-</div>
-
-<section class="container">
-    <div>
-        <?php
+require_once('../lib/func.php');
 
         $username= checkAuth();
         //print_r($_SESSION);
         //echo 'username---->'.$username;
         if($username == false){
-            showLoginForm();
+            //showLoginForm();
+            include_once ('./view/login.php');
             if(isset($_GET['commit'])){
                 $login=$_GET['login'];
                 $password=$_GET['password'];
@@ -34,11 +21,11 @@ require_once('../lib/func.php');?>
                     goUri("/admin/index.php");
                 }
             }else{
-
             }
         }else{
-            echo 'hi '.$_SESSION['username'];
-            echo '<a href="/admin/logout.php">Выход</a>';
+           /* echo 'hi '.$_SESSION['username'];
+            echo '<a href="/admin/logout.php">Выход</a>';*/
+           include_once ('./view/main.php');
         }
         ?>
     </div>
