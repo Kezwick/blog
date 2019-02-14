@@ -36,5 +36,9 @@
 		</section>
 
 	</div>
+<?php
+include_once ('./lib/func.php');
+showUsualFooter();
+?>
 </body>
 </html>
