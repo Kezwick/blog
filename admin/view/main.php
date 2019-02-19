@@ -1,3 +1,8 @@
+
+<?php
+//session_start();
+//require_once('../../lib/func.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +12,16 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="./view/Components/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Components/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="./view/Components/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./Components/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="./view/Components/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="./Components/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="./view/Components/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="./Components/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="./view/Components/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="./Components/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -162,6 +167,14 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <li class="treeview">
+              <a href="./admin/index.php?action=filemanager">
+                  <i class="fa fa-picture-o "></i>
+                  <span>File manager</span>
+                  <span class="pull-right-container">
+
+            </span>
+              </a>
           <ul class="treeview-menu">
             <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
             <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
@@ -198,8 +211,20 @@
       <h1>
         Blank page
         <small>it all starts here</small>
+
+          <?php adminMain();?>
+
       </h1>
     </section>
+
+
+
+
+
+
+
+
+
 
     <!-- Main content -->
     <section class="content">
@@ -439,17 +464,17 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="./view/Components/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./Components/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="./view/Components/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./Components/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="./view/Components/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="./Components/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="./view/Components/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="./Components/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="./view/Components/dist/js/adminlte.min.js"></script>
+<script src="./Components/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="./view/Components/dist/js/demo.js"></script>
+<script src="./Components/dist/js/demo.js"></script>
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
