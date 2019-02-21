@@ -1,44 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="mystyle.css">
-</head>
-<body>
-	<div id="wrap">
-		<header class="header">
-			<nav class="menu">
-				<ul class="lists-item">
-					<li class="list-item">
-						<a href="index.php?text=1" class="link-item">Ссылка 1</a>
-					</li>
-					<li class="list-item">
-						<a href="index.php?text=2" class="link-item">Ссылка 2</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="clr"></div>
-			<div class="bg-header"></div>
-		</header>
-		<section class="content">
-			<div class="addnews">
-				<div class="news">
-					<div class="title">
-						<h3>Новость 1</h3>
-					</div>
-                    <div>
-					     <?php include_once ('./lib/func.php'); showcaseswitch();?>
-                    </div>
-					<div class="clr"></div>
-				</div>
-			</div>
-		</section>
-
-	</div>
 <?php
-include_once ('./lib/func.php');
-showUsualFooter();
+@define('ABSPATH', str_replace('\\', '/', dirname(__FILE__)));
+define('DB_HOST', '192.168.10.10');
+define('DB_USER', 'homestead');
+define('DB_PASSWORD', 'secret');
+define('DB_DATABASE', 'homestead');
+
+// загрузка автозагрузчика
+require_once __DIR__.'/vendor/autoload.php';
+
+
+/*
+// место где будут хранятся шаблоны Twig
+$loader = new Twig_Loader_Filesystem(__DIR__.'/views');
+
+// инициализация самого движка
+$twig = new Twig_Environment($loader);
+
+
+echo $twig->render('blog/index.php', ['title' => 'Blog Home  WOW'] );
+*/
+
+/*
+
+
+$model = new \Core\CoreModel();
+echo  $model->findAll();
+
+
+$view = new \Core\CoreView();
+$view->index();*/
+
+$article = new \Core\Article();
+$article->ShowAllPost();
+
+//print_r($article->result);
 ?>
-</body>
-</html>

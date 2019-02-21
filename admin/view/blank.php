@@ -31,6 +31,7 @@
 <div class="">
   <div class="">
       <?php
+      include_once('../../lib/func.php');
       $username= checkAuth();
       print_r($username);
       if($username == false){
