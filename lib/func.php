@@ -31,7 +31,7 @@ function checkAuth(){
 function showLoginForm(){
     echo '<div class="login">
         <h1>Авторизация</h1>
-        <form method="get" action="/admin/index.php">
+        <form method="get" action="/admin/view/index.php">
             <p><input type="text" name="login" value="" placeholder="Логин"></p>
             <p><input type="password" name="password" value="" placeholder="Пароль"></p>
             <p class="submit"><input type="submit" name="commit" value="Войти"></p>

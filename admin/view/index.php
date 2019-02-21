@@ -8,7 +8,7 @@ require_once('../lib/func.php');
         //echo 'username---->'.$username;
         if($username == false){
             //showLoginForm();
-            include_once ('./view/login.php');
+            include_once('./view/login.php');
             if(isset($_GET['commit'])){
                 $login=$_GET['login'];
                 $password=$_GET['password'];
@@ -25,7 +25,7 @@ require_once('../lib/func.php');
         }else{
            /* echo 'hi '.$_SESSION['username'];
             echo '<a href="/admin/logout.php">Выход</a>';*/
-           include_once ('./view/main.php');
+           include_once('./view/main.php');
         }
         ?>
     </div>

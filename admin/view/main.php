@@ -88,7 +88,7 @@
                     <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
                   </div>
                   <div class="pull-right">
-                      <a href="/admin/logout.php">Выход</a>
+                      <a href="/admin/view/logout.php">Выход</a>
                   </div>
                 </li>
               </ul>

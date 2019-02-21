@@ -53,7 +53,7 @@
           */
       }else{
           echo 'hi '.$_SESSION['username'];
-          echo '<a href="/admin/logout.php">Выход</a>';
+          echo '<a href="/admin/view/logout.php">Выход</a>';
       }
       ?>
         <?php
