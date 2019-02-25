@@ -21,7 +21,7 @@ class CoreView
         $this->loader = new \Twig_Loader_Filesystem(ABSPATH.'/views');
         //echo $loader;
 
-        $this->twig = new \Twig_Environment($this->loader);
+        $this->twig = new \Twig_Environment($this->loader,['autoescape' => false]);
         //echo $twig;
     }
 

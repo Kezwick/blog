@@ -8,6 +8,8 @@ define('DB_DATABASE', 'homestead');
 // загрузка автозагрузчика
 require_once __DIR__.'/vendor/autoload.php';
 
+use NoahBuscher\Macaw\Macaw;
+
 
 /*
 // место где будут хранятся шаблоны Twig
@@ -30,8 +32,15 @@ echo  $model->findAll();
 $view = new \Core\CoreView();
 $view->index();*/
 
-$article = new \Core\Article();
-$article->ShowAllPost();
-
+//$article = new \Core\ArticleController();
+//$article->ShowAllPost();
+//$article->showSinglePost(2);
 //print_r($article->result);
+
+
+Macaw::get('/', 'Core\ArticleController@ShowAllPost');
+Macaw::get('page', 'Core\ArticleController@lol');
+Macaw::get('view/(:num)', 'Core\ArticleController@showSinglePost');
+
+Macaw::dispatch();
 ?>

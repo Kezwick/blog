@@ -13,7 +13,7 @@ class CoreModel
 {
     public $db;
     public $table;
-    public $out;
+    public $out=array();
 
     public  function  __construct()
     {
@@ -40,23 +40,5 @@ class CoreModel
         return $this->out;
         
     }
-    public function all()
-    {
-        $query = "SELECT * FROM ".$this->table;
 
-        $result = $this->db->query($query);
-        $this->out=$result;
-        // обрабатываем результат
-/*
-        while($d = $result->fetch_assoc()) {
-            $this->out .= '<p>#' . $d['id'] . '<br>' . $d['title'] .'<br>'. $d['text'] . '<br>'.$d['intro'].'<br></p>' ;
-        }*/
-        // закрываем входной поток
-        $result->close();
-        // закрываем соединение с MySQL
-        $this->db->close();
-
-        //return $this->out;
-
-    }
 }

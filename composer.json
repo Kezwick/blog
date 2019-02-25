@@ -15,7 +15,8 @@
     },
     "require": {
         "twig/twig": "^2.0",
-        "j4mie/idiorm": "^1.5"
+        "j4mie/idiorm": "^1.5",
+        "noahbuscher/macaw": "dev-master"
 
     }
 }
