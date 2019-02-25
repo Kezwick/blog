@@ -1,7 +1,6 @@
 <?php
-define("DB_CONFIG",array(
-    'host' => '192.168.10.10',
-    'username' => 'homestead',
-    'passwords' => 'secret',
-    'dbname' => 'homestead',
-));
+
+define('DB_HOST', '192.168.10.10');
+define('DB_USER', 'homestead');
+define('DB_PASSWORD', 'secret');
+define('DB_DATABASE', 'homestead');
