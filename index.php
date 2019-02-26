@@ -18,7 +18,7 @@ Macaw::get('view/(:num)', 'Core\ArticleController@showSinglePost');
 
 Macaw::get('cat', 'Core\CategoryController@lol');
 
-Macaw::get('cat/(:num)', 'Core\CategoryController@showCategoryPost');
+Macaw::get('cat/(:any)', 'Core\ArticleController@showCategoryPost');
 
 Macaw::dispatch();
 ?>

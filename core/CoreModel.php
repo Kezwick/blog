@@ -15,11 +15,22 @@ class CoreModel
     public $table;
     public $out=array();
 
-    public  function  __construct()
+    public  function  __construct($table)
     {
         $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
         $this->db->set_charset("utf8");/////
-        $this->table = 'Article';
+        $this->table = $table;
+    }
+
+    /**
+     * @param $slug
+     * @return bool|\mysqli_result
+     */
+    public function findUsingSlug($slug)
+    {
+        $query = "SELECT * FROM " . $this->table." WHERE slug ='".$slug."' LIMIT 1";
+        return $this->db->query($query);
+
     }
 
     public function findAll()

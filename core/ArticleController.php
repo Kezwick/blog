@@ -16,19 +16,15 @@ class ArticleController
     public $result;//?????
     public function __construct()
     {
-        $this->Model= new Model();
+        $this->Model= new Model('article');
         $this->View = new View();
     }
 
     public function ShowAllPost()
     {
-     $this->Model->all();
-     $this->result=$this->Model->out;
-
-     /*echo '<pre>';
-     print_r($this->result);
-        echo '</pre>';*/
-     $this->View->all($this->result);
+        $this->Model->all();
+        $this->result=$this->Model->out;
+        $this->View->all($this->result);
     }
 
     public function showSinglePost($id)
@@ -36,6 +32,11 @@ class ArticleController
         $this->Model->findById($id);
         //$this->result=$this->Model->out;
         $this->View->single($this->Model->out);
+    }
+
+    public function showCategoryPost($slug)
+    {
+        $this->Model->findByCategory($slug);
     }
 
     public function lol()
