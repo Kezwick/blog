@@ -8,24 +8,58 @@
 
 namespace Core;
 use Core\CoreModel ;
+use Core\ServiceController as Serv;
 
 
 class ArticleModel extends CoreModel
 {
-    public function all()
+    public function titleToSlag()
     {
-        $query = "SELECT * FROM " . $this->table . ' ORDER BY data DESC';
+        $query = "SELECT * FROM " . $this->table;
+
 
         $result = $this->db->query($query);
 
 
         // обрабатываем результат
 
+        while ($d = $result->fetch_assoc())
+        {
+
+            if ($d['slug'] == null) {
+                $d['slug'] = Serv::url_slug($d['title'], array('transliterate' => true));
+                $qu1= " UPDATE ". $this->table." SET slug ='".$d['slug']. "' WHERE id=".$d["id"].";" ;
+
+                Serv::dbg($d["id"]);
+                $res = $this->db->query($qu1);
+            }
+
+
+            //
+
+        }
+
+
+    }
+    public function all()
+    {
+        $query = "SELECT * FROM " . $this->table . ' ORDER BY data DESC';
+
+        $result = $this->db->query($query);
+        echo '<pre>';
+        print_r($result->num_rows);
+        echo '</pre>';
+
+        // обрабатываем результат
+
         while ($d = $result->fetch_assoc()) {
 
-            /*echo '<pre>';
-            print_r($d);
-            echo '</pre>';*/
+            if ($d['slug']==null){
+                $d['slug']= Serv::url_slug($d['title'], array('transliterate' => true));
+            }
+
+
+
 
 
             $this->out[] = $d;

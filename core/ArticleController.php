@@ -10,6 +10,7 @@ namespace Core;
 
 use Core\ArticleModel as Model;
 use Core\ArticleView as View;
+use Core\ServiceController;
 
 
 
@@ -44,7 +45,7 @@ class ArticleController
 
     public function lol()
     {
-        echo "Все страницы закончились - идите лесом !!!";
+        $this->Model->titleToSlag();
     }
 
 

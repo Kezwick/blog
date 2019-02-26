@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-require_once('../lib/func.php');
+require_once('../../lib/func.php');
 
         $username= checkAuth();
         //print_r($_SESSION);
