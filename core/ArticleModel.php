@@ -13,7 +13,7 @@ use Core\ServiceController as Serv;
 
 class ArticleModel extends CoreModel
 {
-    public function titleToSlag()
+    public function titleToSlag()/// перенести в COreModel
     {
         $query = "SELECT * FROM " . $this->table;
 
@@ -53,13 +53,6 @@ class ArticleModel extends CoreModel
         // обрабатываем результат
 
         while ($d = $result->fetch_assoc()) {
-
-            if ($d['slug']==null){
-                $d['slug']= Serv::url_slug($d['title'], array('transliterate' => true));
-            }
-
-
-
 
 
             $this->out[] = $d;

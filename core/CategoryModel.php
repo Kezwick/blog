@@ -1,13 +1,20 @@
 <?php
-
-
 namespace Core;
+
 use Core\CoreModel ;
 use Core\ServiceController as Serv;
 
 class CategoryModel extends CoreModel
 {
-    public  $table="category";
+    //public  $table="category";???
+
+    public function __construct()
+    {
+        $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+        $this->db->set_charset("utf8");/////
+        $this->table = 'category';//???
+    }
+
     public function nameToSlag()
     {
         $query = "SELECT * FROM " . $this->table;
