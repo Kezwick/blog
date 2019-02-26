@@ -19,7 +19,7 @@
 
     </div>
     <div class="card-footer text-muted">
-        Опубликовано {{article.data}} by
+        Опубликовано {{article.data}}
 
     </div>
 </div>

@@ -1,5 +1,14 @@
-rewrite ^/(.*)/$ /$1 redirect;
+RewriteEngine On
+RewriteBase /
 
-if (!-e $request_filename){
-	rewrite ^(.*)$ /index.php break;
-}
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?$1 [QSA,L]
+
+#rewrite ^/(.*)/$ /$1 redirect;
+
+#if (!-e $request_filename){
+#	rewrite ^(.*)$ /index.php break;
+#}
