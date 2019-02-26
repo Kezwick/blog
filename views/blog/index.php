@@ -11,10 +11,10 @@
   <title>{{title}}</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="views/blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/views/blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="views/blog/css/blog-home.css" rel="stylesheet">
+  <link href="/views/blog/css/blog-home.css" rel="stylesheet">
 
 </head>
 
@@ -190,8 +190,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="views/blog/vendor/jquery/jquery.min.js"></script>
-  <script src="views/blog/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/views/blog/vendor/jquery/jquery.min.js"></script>
+  <script src="/views/blog/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
