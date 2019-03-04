@@ -13,12 +13,12 @@ use NoahBuscher\Macaw\Macaw;
 
 
 Macaw::get('/', 'Core\ArticleController@ShowAllPost');
-Macaw::get('page', 'Core\ArticleController@lol');
-Macaw::get('view/(:num)', 'Core\ArticleController@showSinglePost');
+Macaw::get('page', 'Core\ArticleController@lol');// auto slug
+Macaw::get('article/(:num)', 'Core\ArticleController@showSinglePost');
 
-Macaw::get('cat', 'Core\CategoryController@lol');
+Macaw::get('cat', 'Core\CategoryController@lol');//autoslug
 
-Macaw::get('cat/(:num)', 'Core\CategoryController@showCategoryPost');
+Macaw::get('cat/(:any)', 'Core\ArticleController@showCategoryPost');
 
 Macaw::dispatch();
 ?>

@@ -12,9 +12,9 @@ use Core\CoreView;
 
 class ArticleView extends  CoreView
 {
-    public function all($articles)
+    public function all($title, $articles, $category)
     {
-        echo $this->twig->render('blog/articles.php', ['title' => 'Blog Home  WOW','articles'=>$articles] );
+        echo $this->twig->render('blog/articles.php', ['title' => $title,'articles'=>$articles, 'category'=>$category] );
     }
     public function single($articles)
     {

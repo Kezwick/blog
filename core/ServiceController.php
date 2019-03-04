@@ -16,8 +16,19 @@ class ServiceController
         echo '<pre>';
         print_r($text);
         echo '</pre>';
-
     }
+
+    public static function goUri($uri)
+    {
+        echo '<script language="JavaScript">
+        document.location.href = \''.$uri.'\'</script>';
+    }
+
+    public static function showAlert($text)
+    {
+        echo '<script language="JavaScript">alert( \''.$text.'\' );</script>';
+    }
+
     public  static function url_slug($str, $options = array()) {
         // Make sure string is in UTF-8 and strip invalid UTF-8 characters
         $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());

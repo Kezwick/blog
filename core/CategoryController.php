@@ -3,7 +3,7 @@ namespace Core;
 
 use Core\CategoryModel as Model;
 //use Core\ArticleView as View;
-use Core\ServiceController;
+use Core\ServiceController as Serv;
 
 class CategoryController
 {
@@ -12,7 +12,7 @@ class CategoryController
     public $result;//?????
     public function __construct()
     {
-        $this->Model= new Model();
+        $this->Model= new Model('category');
         //$this->View = new View();
     }
 
@@ -20,10 +20,6 @@ class CategoryController
     {
         $this->Model->all();
         $this->result=$this->Model->out;
-
-        /*echo '<pre>';
-        print_r($this->result);
-           echo '</pre>';*/
         $this->View->all($this->result);
     }
     public function lol()
@@ -32,10 +28,22 @@ class CategoryController
         $this->Model->nameToSlag();
     }
 
-    public function showCategoryPost($slug)
+    public function getCategoryFromSlug($slug)
     {
-        //$this->Model->getSlugCategory($id);
-        $id=$this->Model->getIdCategory($slug);
+        $slug=$this->Model->db->real_escape_string($slug);
+       // $category=$this->Model->getIdCategory($slug);
+        $category=$this->Model->findUsingSlug($slug);
+        if ($category->num_rows == 0)
+        {
+            Serv::showAlert('Нет такой категории. Иди лесом умник :)');
+            Serv::goUri("/");
+        } else {
+            while($cat = $category->fetch_assoc()) {
+                //Serv::dbg($cat);
+                echo $cat['name'] . " = " . $cat['slug'];
+                return $cat;
+            }
+        }
 
     }
 

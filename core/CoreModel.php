@@ -8,6 +8,8 @@
 
 namespace Core;
 
+use Core\ServiceController as Serv;
+
 
 class CoreModel
 {
@@ -15,30 +17,45 @@ class CoreModel
     public $table;
     public $out=array();
 
-    public  function  __construct()
+    public  function  __construct($table)
     {
         $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
         $this->db->set_charset("utf8");/////
-        $this->table = 'Article';
+        $this->table = $table;
+    }
+
+    /**
+     * нет экранирования!!!!!!!
+     *
+     * @param $slug
+     *
+     * @return bool|\mysqli_result
+     */
+    public function findUsingSlug($slug)
+    {
+        $query = "SELECT * FROM " . $this->table." WHERE slug ='".$slug."' LIMIT 1";
+        $res = $this->db->query($query);
+        return $res->fetch_assoc();
+
     }
 
     public function findAll()
     {
         $query = "SELECT * FROM ".$this->table;
-        
+
+        //Serv::dbg($query);
+
+
         $result = $this->db->query($query);
+
         // обрабатываем результат
+        //Serv::dbg($result);
 
         while($d = $result->fetch_assoc()) {
-        $this->out .= '<p>#' . $d['id'] . '<br>' . $d['title'] .'<br>'. $d['text'] . '<br>'.$d['intro'].'<br></p>' ;
+        $this->out[] = $d ;
         }
-        // закрываем входной поток
-        $result->close();
-        // закрываем соединение с MySQL
-        $this->db->close();
-
         return $this->out;
-        
+
     }
 
 }

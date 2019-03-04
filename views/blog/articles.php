@@ -15,7 +15,7 @@
     <div class="card-body">
         <h2 class="card-title">{{article.title}}</h2>
         <p class="card-text">{{article.intro}}</p>
-        <a href="/view/{{article.id}}" class="btn btn-primary">Читать полностью &rarr;</a>
+        <a href="/article/{{article.id}}" class="btn btn-primary">Читать полностью &rarr;</a>
     </div>
     <div class="card-footer text-muted">
         Posted on {{article.data}} by
@@ -26,14 +26,7 @@
 
 
 <!-- Pagination -->
-<ul class="pagination justify-content-center mb-4">
-    <li class="page-item">
-        <a class="page-link" href="#">&larr; Older</a>
-    </li>
-    <li class="page-item disabled">
-        <a class="page-link" href="#">Newer &rarr;</a>
-    </li>
-</ul>
+
 
 </div>
 
