@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Core;
 
 use Core\ArticleModel as Model;
@@ -37,7 +35,7 @@ class ArticleController
 
     public function showCategoryPost($slug)
     {
-        $this->Model->findByCategory(mysql_real_escape_string($slug));
+        $this->Model->findByCategory($slug);
         $this->View->all($this->Model->title, $this->Model->out, $this->Category->findAll());
     }
 

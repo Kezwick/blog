@@ -15,6 +15,63 @@ use Core\CategoryModel as Category;
 class ArticleModel extends CoreModel
 {
     public $title;
+
+    public function articleAdd()
+    {
+        if (isset($_POST['btnartadd']))
+        {
+            $title=$_POST['title'];
+            $cat_id=$_POST['cat_id'];
+            $intro=$_POST['intro'];
+            $text=$_POST['text'];
+            $slug = Serv::url_slug($title, array('transliterate' => true));
+            Serv::dbg($slug);
+            $query = "INSERT INTO ".$this->table." (title, cat_id, slug, intro, text) VALUES ('$title', '$cat_id', '$slug',  '$intro','$text' ) ";
+            $result = $this->db->query($query);
+            //Serv::dbg($query);
+            Serv::showAlert('ok');
+            Serv::goUri('/admin/article-list');
+        }
+        echo 'error';
+    }
+
+    public function articleEdit()
+    {
+        if (isset($_POST['btnartedit']))
+        {
+            $title=$_POST['title'];
+            $cat_id=$_POST['cat_id'];
+            $id=$_POST['id'];
+            $intro=$_POST['intro'];
+            $text=$_POST['text'];
+            $slug = Serv::url_slug($title, array('transliterate' => true));
+            //Serv::dbg($slug);
+            $query = " UPDATE ".$this->table.  " SET title='$title', cat_id='$cat_id', slug='$slug', intro='$intro', text='$text' WHERE id = '$id'  ";
+            //mysql_query(" blogEntry SET content = $udcontent, title = $udtitle WHERE id = $id");
+            $result = $this->db->query($query);
+            //Serv::dbg($query);
+            Serv::showAlert('ok');
+            Serv::goUri('/admin/article-list');
+        }
+        echo 'error';
+    }
+
+    public function articleDelete()
+    {
+        if (isset($_POST['btnartdelete']))
+        {
+            $id=$_POST['btnartdelete'];
+            //Serv::dbg($slug);
+            $query = " DELETE FROM ".$this->table." WHERE id = '$id' ";
+            //mysql_query(" blogEntry SET content = $udcontent, title = $udtitle WHERE id = $id");
+            $result = $this->db->query($query);
+            //Serv::dbg($query);
+            Serv::showAlert('ok');
+            Serv::goUri('/admin/article-list');
+        }
+        echo 'error';
+    }
+
     public function titleToSlag()/// перенести в COreModel
     {
         $query = "SELECT * FROM " . $this->table;

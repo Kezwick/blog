@@ -27,7 +27,7 @@ class CoreView
 
     public function index()
     {
-        echo $this->twig->render('blog/articles.php', ['title' => 'Blog Home  WOW'] );
+        //echo $this->twig->render('blog/articles.php', ['title' => 'Blog Home  WOW'] );
     }
 
 
