@@ -24,9 +24,14 @@ class ArticleModel extends CoreModel
             $cat_id=$_POST['cat_id'];
             $intro=$_POST['intro'];
             $text=$_POST['text'];
+            $image=$_POST['image'];
+            if ($image == '')
+            {
+                $image = '/uploads/no_image.jpg';
+            }
             $slug = Serv::url_slug($title, array('transliterate' => true));
             Serv::dbg($slug);
-            $query = "INSERT INTO ".$this->table." (title, cat_id, slug, intro, text) VALUES ('$title', '$cat_id', '$slug',  '$intro','$text' ) ";
+            $query = "INSERT INTO ".$this->table." (title, image, cat_id, slug, intro, text) VALUES ('$title', '$image', '$cat_id', '$slug',  '$intro','$text' ) ";
             $result = $this->db->query($query);
             //Serv::dbg($query);
             Serv::showAlert('ok');

@@ -16,6 +16,29 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+#picture {
+
+
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+#picture img{
+    border-radius: 10px;
+
+}
+
+#picture span {
+    display: block;
+    padding: 10px;
+    color: #A6A6A6;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Tauri', sans-serif;
+    text-shadow: 2px 2px 0px #fff;
+    margin-top: 150px;
+}
+
  #wrapper {
     width: 100%;
     background:#202020;

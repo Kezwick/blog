@@ -36,6 +36,35 @@
         <textarea name="intro" class="form-control" rows="3">Заполните краткий текст статьи.(max 240 char)</textarea>
     </div>
     <div class="form-group">
+        <label>Выберите изоброжение для статьи</label>
+
+        <div id="picture">
+
+        </div>
+        <div class="button-group">
+            <input type="text" id="featured_image" placeholder="Image Url" readonly name="image"/>
+            <button type="button" class="browse" id="imageUpload"> Выбрать изображение</button>
+        </div>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#imageUpload').popupWindow({
+                    windowURL: '/views/admin/assets/elfinder/elfinder1.html',
+                    windowName: 'Filebrowser',
+                    height: 490,
+                    width: 950,
+                    centerScreen: 1
+                });
+            });
+
+            function processFile(file) {
+                $('#picture').html('<img src="' + file.url + '" />');
+                $('#featured_image').val(file.url);
+            }
+        </script>
+    </div>
+
+    <div class="form-group">
         <textarea name="text" id="mytextarea" style="display:none;"><h1>Заполните полный текст статьи.</h1></textarea>
     </div>
     <div class="form-group">
