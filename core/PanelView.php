@@ -11,6 +11,9 @@ class PanelView extends  CoreView
     {
         echo $this->twig->render('admin/dashboard.php', ['title' => $title,'articles'=>$articles, 'category'=>$category] );
     }
+
+
+
     public function articleList($title, $articles, $category)
     {
         echo $this->twig->render('admin/article-list.php', ['title' => $title,'articles'=>$articles, 'category'=>$category] );
@@ -25,6 +28,25 @@ class PanelView extends  CoreView
     {
         echo $this->twig->render('admin/edit-article.php', ['title' => $title,'articles'=>$articles, 'category'=>$category] );
     }
+
+
+
+    public function categoryList($title, $category)
+    {
+        echo $this->twig->render('admin/cat-list.php', ['title' => $title,'category'=>$category]);
+    }
+
+    public function addCategory($title, $category)
+    {
+        echo $this->twig->render('admin/cat-form.php', ['title' => $title,'category'=>$category]);
+    }
+
+    public function editCategory($title, $category)
+    {
+        echo $this->twig->render('admin/edit-cat.php', ['title' => $title,'category'=>$category]);
+    }
+
+
 
     public function hell($title, $articles, $category)
     {

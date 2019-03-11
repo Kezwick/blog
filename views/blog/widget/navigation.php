@@ -11,8 +11,8 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin">Panel</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/dashboard">Admin panel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>

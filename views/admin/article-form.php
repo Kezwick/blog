@@ -33,7 +33,7 @@
     </div>
     <div class="form-group">
         <label>Вводный текст</label>
-        <textarea name="intro" class="form-control" rows="3">Заполните краткий текст статьи.(max 240 char)</textarea>
+        <textarea name="intro" class="form-control" rows="3" placeholder="Заполните краткий текст статьи.(max 240 char)"></textarea>
     </div>
     <div class="form-group">
         <label>Выберите изоброжение для статьи</label>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="form-group">
-        <textarea name="text" id="mytextarea" style="display:none;"><h1>Заполните полный текст статьи.</h1></textarea>
+        <textarea name="text" id="mytextarea" style="display:none;"></textarea>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-default" name="btnartadd">Submit Button</button>

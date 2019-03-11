@@ -23,8 +23,9 @@
         <input name="name" class="form-control" placeholder="Введите заголовок" />
     </div>
 
-    <div class="form-group">
+    <е о class="form-group">
         <label>Описание</label>
+        <input name="name" class="form-control" placeholder="Введите описание" />
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-default">Submit Button</button>

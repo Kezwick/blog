@@ -17,7 +17,7 @@
                 Advanced Tables
             </div>
             <div class="panel-body">
-                <form method="post" action="/admin/article-delete/">
+                <form method="post" action="/admin/cat-delete/">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
@@ -28,13 +28,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for article in articles %}
+                        {% for article in category %}
                         <tr class="odd gradeX">
                             <td>{{article.name}}</td>
-                            <td><img style="width: 120px" src="{{article.image}}"></td>
+
                             <td>{{article.description}}</td>
                             <td class="center">
-                                <a href="/admin/article-edit/{{article.id}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-pencil fa-fw"></i></a>
+                                <a href="/admin/cat-edit/{{article.id}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-pencil fa-fw"></i></a>
                                 <button class="btn btn-danger btn-xs" type="submit" value="{{article.id}}" name="btnartdelete"><i class="fa fa-trash-o fa-fw"></i>
                                 </button>
                             </td>

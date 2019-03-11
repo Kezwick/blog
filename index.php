@@ -27,7 +27,11 @@ Macaw::post('/admin/articleadd', 'Core\PanelController@articleAdd');
 Macaw::post('/admin/articleedit', 'Core\PanelController@articleEdit');
 Macaw::post('/admin/article-delete/', 'Core\PanelController@articleDelete');
 
-Macaw::get('cat', 'Core\CategoryController@lol');//autoslug
+Macaw::get('/admin/cat-list', 'Core\PanelController@showCategoryList');
+Macaw::get('/admin/cat-add', 'Core\PanelController@categoryAddForm');
+Macaw::get('/admin/cat-edit/(:num)', 'Core\PanelController@categoryEditForm');
+Macaw::post('/admin/cat-delete/', 'Core\PanelController@categoryDelete');
+
 
 Macaw::get('cat/(:any)', 'Core\ArticleController@showCategoryPost');
 

@@ -7,7 +7,7 @@
 
 
             <li>
-                <a class="active-menu" href="/admin"><i class="fa fa-dashboard fa-3x"></i> Статистика</a>
+                <a class="active-menu" href="/admin/dashboard"><i class="fa fa-dashboard fa-3x"></i> Статистика</a>
             </li>
             <li  >
                 <a  href="/admin/article-add"><i class="fa fa-pencil fa-3x"></i> Добавить статью </a>
@@ -16,10 +16,10 @@
                 <a  href="/admin/article-list"><i class="fa fa-list fa-3x"></i> Список статей </a>
             </li>
             <li  >
-                <a  href="/admin/article-add"><i class="fa fa-edit fa-3x"></i> Добавить катугорию </a>
+                <a  href="/admin/cat-add"><i class="fa fa-edit fa-3x"></i> Добавить категорию </a>
             </li>
             <li>
-                <a  href="/admin/article-list"><i class="fa fa-list-alt fa-3x"></i> Список категорий </a>
+                <a  href="/admin/cat-list"><i class="fa fa-list-alt fa-3x"></i> Список категорий </a>
             </li>
 
         </ul>

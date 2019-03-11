@@ -25,11 +25,20 @@ class CategoryModel extends CoreModel
      * @param $slug
      * @return bool|\mysqli_result
      */
-    public function getIdCategory($slug)
+    public function getCategoryBySlug($slug)
     {
         $query = "SELECT * FROM " . $this->table." WHERE slug ='".$slug."' LIMIT 1";
         return $this->db->query($query);
 
+    }
+
+    public function findById($id)
+    {
+        $query = "SELECT * FROM " . $this->table . "  WHERE id = '$id' ";
+        $result = $this->db->query($query);
+        $this->out[] = $result->fetch_assoc();
+        $result->close();
+        $this->db->close();
     }
 
 }

@@ -18,8 +18,7 @@
         <a href="/article/{{article.id}}" class="btn btn-primary">Читать полностью &rarr;</a>
     </div>
     <div class="card-footer text-muted">
-        Posted on {{article.data}} by
-        <a href="#">Start Bootstrap</a>
+        Posted on {{article.data}}
     </div>
 </div>
 {% endfor %}
