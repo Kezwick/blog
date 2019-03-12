@@ -39,6 +39,16 @@ class CoreModel
 
     }
 
+    public function count()
+    {
+        $query="SELECT count(*) AS c FROM ".$this->table;
+        $result = $this->db->query($query);
+        $count = $result->fetch_object()->c;
+        $result->free();
+        $this->db->close();
+        return $count;
+    }
+
     public function findAll()
     {
         $query = "SELECT * FROM ".$this->table;

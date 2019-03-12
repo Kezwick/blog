@@ -30,6 +30,7 @@ Macaw::post('/admin/article-delete/', 'Core\PanelController@articleDelete');
 Macaw::get('/admin/cat-list', 'Core\PanelController@showCategoryList');
 Macaw::get('/admin/cat-add', 'Core\PanelController@categoryAddForm');
 Macaw::get('/admin/cat-edit/(:num)', 'Core\PanelController@categoryEditForm');
+Macaw::post('/admin/cat-edit', 'Core\PanelController@categoryEdit');
 Macaw::post('/admin/cat-delete/', 'Core\PanelController@categoryDelete');
 
 

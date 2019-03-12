@@ -100,24 +100,24 @@ class ArticleModel extends CoreModel
         $this->title =' All';
         $query = "SELECT * FROM " . $this->table . ' ORDER BY data DESC';
         $result = $this->db->query($query);
-        //Serv::dbg($result->num_rows);
-
-        // обрабатываем результат
-
-        while ($d = $result->fetch_assoc()) {
-
-
+        while ($d = $result->fetch_assoc())
+        {
             $this->out[] = $d;
-
         }
-        // закрываем входной поток
         $result->close();
-        // закрываем соединение с MySQL
         $this->db->close();
+    }
 
-
-        //return $this->out;
-
+    public function lastArticle($colvo)
+    {
+        $query = "SELECT * FROM " . $this->table . ' ORDER BY data DESC LIMIT '.$colvo;
+        $result = $this->db->query($query);
+        while ($d = $result->fetch_assoc())
+        {
+            $this->out[] = $d;
+        }
+        $result->close();
+        //$this->db->close();
     }
 
     public function findById($id)

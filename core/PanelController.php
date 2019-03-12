@@ -6,6 +6,7 @@ namespace Core;
 use Core\PanelView as View;
 use Core\CategoryModel as Category;
 use Core\ArticleModel as Article;
+use Core\ServiceController as Serv;
 
 class PanelController
 {
@@ -25,8 +26,8 @@ class PanelController
 
     public function dashboard()
     {
-        //$this->Article->all();
-        $this->View->dashboard('Статистика', $this->Article->out, '');
+        $this->Article->lastArticle(3);
+        $this->View->dashboard('Статистика', $this->Article->count(), $this->Category->count(), $this->Article->out);
     }
 
 
@@ -84,7 +85,8 @@ class PanelController
     {
         $this->Category->findById($id);
         //$this->Article->findById($id);
-        $this->View->editCategory('Редактировать ктегорию', $this->Category->out, '');
+        //Serv::dbg($this->Category->out);
+        $this->View->editCategory('Редактировать категорию', $this->Category->out, '');
     }
     public function categoryEdit()
     {

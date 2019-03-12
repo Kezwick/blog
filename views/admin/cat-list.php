@@ -13,9 +13,6 @@
     <div class="col-md-12">
         <!-- Advanced Tables -->
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Advanced Tables
-            </div>
             <div class="panel-body">
                 <form method="post" action="/admin/cat-delete/">
                 <div class="table-responsive">
@@ -35,7 +32,7 @@
                             <td>{{article.description}}</td>
                             <td class="center">
                                 <a href="/admin/cat-edit/{{article.id}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-pencil fa-fw"></i></a>
-                                <button class="btn btn-danger btn-xs" type="submit" value="{{article.id}}" name="btnartdelete"><i class="fa fa-trash-o fa-fw"></i>
+                                <button class="btn btn-danger btn-xs" type="submit" value="{{category.id}}" name="btncatdelete"><i class="fa fa-trash-o fa-fw"></i>
                                 </button>
                             </td>
                         </tr>
