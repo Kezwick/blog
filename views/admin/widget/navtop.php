@@ -8,10 +8,11 @@
         </button>
         <a class="navbar-brand" href="/">Панель управления</a>
     </div>
-    <div style="color: white;
+    <div class="visible-md visible-lg" style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
 font-size: 16px;">
+        <div class="col-md-9">
         Сейчас :
         <span id="time">00:00:00</span>
 
@@ -58,5 +59,9 @@ font-size: 16px;">
 
             // Вывод
            // document.write("Текущее время: "+Hour+":"+Minutes+":"+Seconds);
-        </script>   &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Выход</a> </div>
+        </script></div>
+        <div class="col-md-3">
+        <a href="login.html" class="btn btn-danger square-btn-adjust"><i class="fa fa-sign-out" aria-hidden="true"></i>
+            Выход</a> </div>
+    </div>
 </nav>

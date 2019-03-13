@@ -26,7 +26,7 @@ class PanelController
 
     public function dashboard()
     {
-        $this->Article->lastArticle(3);
+        $this->Article->lastArticle(6);
         $this->View->dashboard('Статистика', $this->Article->count(), $this->Category->count(), $this->Article->out);
     }
 

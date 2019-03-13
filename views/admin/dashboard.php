@@ -11,7 +11,7 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-blue set-icon">
                     <i class="fa fa-pencil-square-o"></i>
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-green set-icon">
                     <i class="fa fa-bars"></i>
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-
+</div>
 <!-- /. ROW  -->
 <hr />
     <div class="row">
@@ -43,9 +43,10 @@
             </div>
         </div>
     </div>
+<div class="row">
     {% for article in lastArticles %}
-    <div class="row">
-        <div class="col-md-4 col-sm-4">
+
+        <div class="col-lg-4 col-md-6 col-sm-12 ">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     {{article.title}}
