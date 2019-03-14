@@ -22,7 +22,7 @@
                 <a  href="/admin/cat-list"><i class="fa fa-list-alt fa-3x"></i> Список категорий </a>
             </li>
             <li>
-                <a href="login.html" ><i class="fa fa-sign-out fa-3x" aria-hidden="true"></i>                    Выход</a>
+                <a href="/admin/logout" ><i class="fa fa-sign-out fa-3x" aria-hidden="true"></i>Выход</a>
             </li>
 
         </ul>

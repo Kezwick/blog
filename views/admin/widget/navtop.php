@@ -61,7 +61,7 @@ font-size: 16px;">
            // document.write("Текущее время: "+Hour+":"+Minutes+":"+Seconds);
         </script></div>
         <div class="col-md-3">
-        <a href="login.html" class="btn btn-danger square-btn-adjust"><i class="fa fa-sign-out" aria-hidden="true"></i>
+        <a href="/admin/logout" class="btn btn-danger square-btn-adjust"><i class="fa fa-sign-out" aria-hidden="true"></i>
             Выход</a> </div>
     </div>
 </nav>

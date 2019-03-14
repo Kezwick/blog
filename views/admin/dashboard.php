@@ -17,7 +17,7 @@
                     <i class="fa fa-pencil-square-o"></i>
                 </span>
             <div class="text-box" >
-                <p class="main-text">На сайте статей - {{articles}}</p>
+                <p class="main-text">На сайте статей: {{articles}}</p>
 
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <i class="fa fa-bars"></i>
                 </span>
             <div class="text-box" >
-                <p class="main-text">  На сайте категорий -{{category}}</p>
+                <p class="main-text">  На сайте категорий: {{category}}</p>
 
             </div>
         </div>

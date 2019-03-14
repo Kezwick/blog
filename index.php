@@ -1,4 +1,5 @@
 <?php
+session_start();
 @define('ABSPATH', str_replace('\\', '/', dirname(__FILE__)));
 require_once ('./config/db.php');
 // загрузка автозагрузчика
@@ -11,8 +12,12 @@ use NoahBuscher\Macaw\Macaw;
 
 
 
+Macaw::post('/admin/login', 'Core\PanelController@login');
+Macaw::get('/admin/login', 'Core\PanelController@loginForm');
+Macaw::get('/admin/logout', 'Core\PanelController@logout');
 
 Macaw::get('/', 'Core\ArticleController@ShowAllPost');
+
 
 Macaw::get('admin/', 'Core\PanelController@dashboard');
 Macaw::get('/admin/dashboard', 'Core\PanelController@dashboard');
@@ -29,6 +34,7 @@ Macaw::post('/admin/article-delete/', 'Core\PanelController@articleDelete');
 
 Macaw::get('/admin/cat-list', 'Core\PanelController@showCategoryList');
 Macaw::get('/admin/cat-add', 'Core\PanelController@categoryAddForm');
+Macaw::post('/admin/cat-add', 'Core\PanelController@categoryAdd');
 Macaw::get('/admin/cat-edit/(:num)', 'Core\PanelController@categoryEditForm');
 Macaw::post('/admin/cat-edit', 'Core\PanelController@categoryEdit');
 Macaw::post('/admin/cat-delete/', 'Core\PanelController@categoryDelete');

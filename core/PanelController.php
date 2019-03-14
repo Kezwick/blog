@@ -7,6 +7,7 @@ use Core\PanelView as View;
 use Core\CategoryModel as Category;
 use Core\ArticleModel as Article;
 use Core\ServiceController as Serv;
+use Core\AuthClass as Auth;
 
 class PanelController
 {
@@ -14,6 +15,7 @@ class PanelController
     public $View;
     public $Category;
     public $Article;
+    public $username;
 
 
     public function __construct()
@@ -21,7 +23,29 @@ class PanelController
         $this->Category = new Category('category');
         $this->View = new View();
         $this->Article = new Article('Article');
-        //$this->Auth() = new
+        $this->authChek();
+    }
+
+    public function loginForm()
+    {
+        $this->View->showLoginForm('Вход');
+    }
+    public function login()
+    {
+        Auth::logIn();
+    }
+    public function logout()
+    {
+        Auth::logOut();
+    }
+
+    public function authChek()
+    {
+      if (Auth::checkAuth() == false)
+      {
+          $this->loginForm();
+          exit();
+      }
     }
 
     public function dashboard()

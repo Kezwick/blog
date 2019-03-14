@@ -49,11 +49,12 @@ class CategoryModel extends CoreModel
         {
             $name=$_POST['name'];
             $description=$_POST['description'];
-            $slug = Serv::url_slug(name, array('transliterate' => true));
+            $slug = Serv::url_slug($name, array('transliterate' => true));
             //Serv::dbg($slug);
             $query = "INSERT INTO ".$this->table." (name, description, slug) VALUES ('$name', '$description', '$slug') ";
-            $result = $this->db->query($query);
             //Serv::dbg($query);
+            $result = $this->db->query($query);
+
             Serv::showAlert('ok');
             Serv::goUri('/admin/cat-list');
         }

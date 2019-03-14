@@ -16,7 +16,7 @@
             <div class="panel-body">
                 <form method="post" action="/admin/cat-delete/">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example1">
                         <thead>
                         <tr>
                             <th>Заголовок</th>
@@ -25,14 +25,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for article in category %}
+                        {% for cat in category %}
                         <tr class="odd gradeX">
-                            <td>{{article.name}}</td>
+                            <td>{{cat.name}}</td>
 
-                            <td>{{article.description}}</td>
+                            <td>{{cat.description}}</td>
                             <td class="center">
-                                <a href="/admin/cat-edit/{{article.id}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-pencil fa-fw"></i></a>
-                                <button class="btn btn-danger btn-xs" type="submit" value="{{category.id}}" name="btncatdelete"><i class="fa fa-trash-o fa-fw"></i>
+                                <a href="/admin/cat-edit/{{cat.id}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-pencil fa-fw"></i></a>
+                                <button class="btn btn-danger btn-xs" type="submit" value="{{cat.id}}" name="btncatdelete"><i class="fa fa-trash-o fa-fw"></i>
                                 </button>
                             </td>
                         </tr>

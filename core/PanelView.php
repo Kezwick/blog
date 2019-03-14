@@ -7,6 +7,15 @@ use Core\CoreView;
 
 class PanelView extends  CoreView
 {
+
+
+
+    public function showLoginForm($title)
+    {
+        echo $this->twig->render('admin/login.php', ['title' => $title]);
+    }
+
+
     public function dashboard($title, $articles, $category ,$lastArticles)
     {
         echo $this->twig->render('admin/dashboard.php', ['title' => $title,'articles'=>$articles, 'category'=>$category, 'lastArticles'=>$lastArticles] );
