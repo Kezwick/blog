@@ -7,16 +7,19 @@ use Core\ServiceController as Serv;
 
 class AuthClass
 {
-    public static  function logIn(){
+    public static function logIn(){
+        //Serv::dbg($_POST());
+
         if (isset($_POST['btnLogin'])){
             $login=$_POST['login'];
             $password=$_POST['password'];
-            if ($login=='user' && $password=='user'){
+            Serv::dbg($login);
+            if ($login=='1' && $password=='1'){
                 $_SESSION['userName']=$login;
-                Serv::showAlert('Welcom - '.$login);
+                Serv::showAlert('Welcome - '.$login);
                 Serv::goUri('/admin/dashboard');
             }else{
-                Serv::showAlert( 'Login or Password incorrect!!!');
+                Serv::showAlert( 'Login or Password incorrect!');
             }
         }
     }

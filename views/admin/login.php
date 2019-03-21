@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template : Binary Admin</title>
+    <title>Admin Template : Binary Admin</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="/views/admin/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -18,7 +18,7 @@
 
         .bg {
             /* The image used */
-            background-image: url("/views/admin/assets/img/bg.jpg");
+            background-image: url("/views/admin/assets/img/black-background.jpg");
 
             /* Full height */
             height: 100%;
@@ -36,11 +36,12 @@
 
 <div class="row text-center ">
             <div class="col-md-12">
-                <br /><br />
-                <h2> Binary Admin : Login</h2>
-               
-                <h5>( Login yourself to get access )</h5>
-                 <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         </div>
          <div class="row ">
@@ -51,28 +52,23 @@
                         <strong>   Enter Details To Login </strong>  
                             </div>
                             <div class="panel-body">
-                                <form method="post" action="/admin/login" ">
+                                <form method="post" action="/admin/login/" ">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
                                             <input name="login" type="text" class="form-control" placeholder="Your Username " />
-                                        </div>
-                                                                              <div class="form-group input-group">
+                                     </div>
+                                        <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
                                             <input name="password" type="password" class="form-control"  placeholder="Your Password" />
                                         </div>
-
-                                <input type="submit" class="btn btn-primary" name="btnLogin" value="">
-
-                                    </form>
+                                    <input type="submit" class="btn btn-primary" name="btnLogin" value="Вход">
+                                </form>
                             </div>
-                           
                         </div>
-                    </div>
-                
-                
+                  </div>
         </div>
-    </div>
+</div>
 
 
 <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
@@ -84,7 +80,7 @@
 <script src="/views/admin/assets/js/jquery.metisMenu.js"></script>
 <!-- CUSTOM SCRIPTS -->
 <script src="/views/admin/assets/js/custom.js"></script>
-
+</body>
 </bodyclassbg>
 </html>
 

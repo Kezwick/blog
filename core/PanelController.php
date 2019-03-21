@@ -24,14 +24,19 @@ class PanelController
         $this->View = new View();
         $this->Article = new Article('Article');
         $this->authChek();
+
     }
 
     public function loginForm()
     {
         $this->View->showLoginForm('Вход');
     }
+
     public function login()
     {
+        //Serv::dbg($_POST());
+        echo '<h1>ghaesyhsruisrtyiud</h1>';
+        Serv::showAlert("ljsa");
         Auth::logIn();
     }
     public function logout()
@@ -41,10 +46,18 @@ class PanelController
 
     public function authChek()
     {
-      if (Auth::checkAuth() == false)
+        /*Serv::dbg($_POST);
+        echo '<br>';
+        Serv::dbg($_SESSION);*/
+        if (Auth::checkAuth() == false)
       {
+
           $this->loginForm();
           exit();
+      }
+      else
+      {
+          $this->username = Auth::checkAuth();
       }
     }
 

@@ -12,8 +12,9 @@ use NoahBuscher\Macaw\Macaw;
 
 
 
-Macaw::post('/admin/login', 'Core\PanelController@login');
+Macaw::post('/admin/login/', 'Core\AuthClass@login');
 Macaw::get('/admin/login', 'Core\PanelController@loginForm');
+Macaw::get('/admin/login1', 'Core\PanelController@login');
 Macaw::get('/admin/logout', 'Core\PanelController@logout');
 
 Macaw::get('/', 'Core\ArticleController@ShowAllPost');
